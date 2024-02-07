@@ -1,1 +1,1 @@
-"# DBCD-Design-Bureau-of-Cybernetic-Devices-" 
+This is the GitHub of MEPHI's students' cybernetic project
