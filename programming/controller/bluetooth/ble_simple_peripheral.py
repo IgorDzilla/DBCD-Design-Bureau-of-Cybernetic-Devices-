@@ -1,5 +1,10 @@
 # This example demonstrates a UART periperhal.
 
+# This example demonstrates the low-level bluetooth module. For most
+# applications, we recommend using the higher-level aioble library which takes
+# care of all IRQ handling and connection management. See
+# https://github.com/micropython/micropython-lib/tree/master/micropython/bluetooth/aioble
+
 import bluetooth
 import random
 import struct
@@ -53,7 +58,7 @@ class BLESimplePeripheral:
             conn_handle, _, _ = data
             print("Disconnected", conn_handle)
             self._connections.remove(conn_handle)
-            # Start advertising again to allow a new connection. Alsways connects when there is an available node.
+            # Start advertising again to allow a new connection.
             self._advertise()
         elif event == _IRQ_GATTS_WRITE:
             conn_handle, value_handle = data
